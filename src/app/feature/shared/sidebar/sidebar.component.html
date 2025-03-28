@@ -1,0 +1,46 @@
+<!-- sidebar.component.html -->
+<div class="sidebar" [class.open]="isSidebarOpen">
+    <div class="sidebar-header">
+        <div class="sidebar-logo d-flex align-items-center gap-2">
+            <a>
+                <span class="company-no-logo">
+                    <img src="../../../../assets/images/logo.png" width="140px"
+                        class="img-fluid logo profilesidebar ms-3 my-2" alt="Logo">
+                </span>
+            </a>
+        </div>
+        <div class="sidebar-container">
+            <ul class="sidebar-menu">
+                <ng-container *ngFor="let item of drawerItems;let itemIndex=index">
+                    <li (click)="toggleItem(item);handleMenuClick(itemIndex)" *ngIf="userIsPermitted(item.base)"
+                        [ngClass]="{'active': base === item.base}">
+                        <div class="menu-item-container li-item">
+                            <i [class]="item.icon"></i>
+                            <span class="menu-label">{{ item.title }}</span>
+                            <i *ngIf="item.subMenu" class="menu-arrow" [class.menu-down-arrow]="item.expanded"></i>
+                        </div>
+
+                        <!-- Submenu -->
+                        <ul *ngIf="item.expanded" class="sub-menu">
+                            <li *ngFor="let subItem of item.subMenu;let subItemIndex=index"
+                                [class.submenu-active]="activeRoute === subItem.route">
+                                <div class="sub-item li-item" (click)="toggleSubItem(subItem, item,$event)">
+                                    {{ subItem.title }}
+                                    <i *ngIf="subItem.subItems" class="menu-arrow"
+                                        [class.menu-down-arrow]="subItem.expanded"></i>
+                                </div>
+
+                                <!-- Sub-submenu -->
+                                <ul *ngIf="subItem.expanded" class="nested-sub-menu">
+                                    <li *ngFor="let nested of subItem.subItems;let nestedItemIndex=index"
+                                        (click)="handleNestedMenuClick(itemIndex,subItemIndex,nestedItemIndex,$event)">
+                                        {{ nested.title }}
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>

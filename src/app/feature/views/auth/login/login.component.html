@@ -1,0 +1,67 @@
+<div class="colored-background">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+        <div class="row border shadow login-box" style="position: relative;">
+            <div class="dgfc-center-logo">
+                <img width="155px" src="../../../../../assets/images/logo-login.png" alt="">
+            </div>
+            <div class="col-lg-6 d-none d-lg-block  login-left-box">
+                <div class="text-white d-flex flex-column justify-content-center align-items-center h-100">
+                    <span style="align-self: baseline;font-size: 36px;">Welcome to DGFC!</span><br>
+                    <span style="font-size: 13px;">
+                        Global logistics precision. Seamless connections. Timely
+                        deliveries. Redefining trade efficiency. Unparalleled solutions
+                        for businesses worldwide.
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 bg-white login-right-box">
+                <div class="form-container">
+                    <div class=" d-block d-md-none d-flex justify-content-center">
+                        <img src="../../../../../assets/images/logo.png" width="200px" style="padding-bottom: 20px;">
+                    </div>
+                    <div class="sign-in-text">
+                        <span style=" color: gray;">Sign In</span>
+                    </div>
+                    <form class="mt-5" #loginForm="ngForm">
+                        <div>
+                            <div class="form-field my-4">
+                                <label class="label">Email/Username*</label>
+                                <input type="text" class="form-control" name="email" [(ngModel)]="data.email"
+                                    #email="ngModel" required
+                                    [ngClass]="{'is-invalid':email.touched && email.errors && email.errors['required']}">
+                                <p *ngIf="email.touched && email.errors && email.errors['required']"
+                                    class="validation-error ">
+                                    Email is required
+                                </p>
+                            </div>
+
+                            <div class="form-field my-4 pb-0">
+                                <label class="label">Password*</label>
+                                <input type="{{isPasswordVisible?'text':'password'}}" class="form-control"
+                                    [(ngModel)]="data.password" #password="ngModel" name="password" required
+                                    [ngClass]="{'is-invalid':password.touched && password.errors && password.errors['required']}">
+                                <i *ngIf="isPasswordVisible" (click)="isPasswordVisible=false"
+                                    class="fa-regular fa-eye input-icons"></i>
+                                <i *ngIf="!isPasswordVisible" (click)="isPasswordVisible=true"
+                                    class="fa-regular fa-eye-slash input-icons"></i>
+                                <p *ngIf="password.touched && password.errors && password.errors['required']"
+                                    class="validation-error ">
+                                    Password is required
+                                </p>
+                            </div>
+
+                            <div class="d-flex justify-content-end mt-4">
+                                <div class="pointer" style="color: rgba(78, 78, 239, 0.625);">Forgot
+                                    Password</div>
+                            </div>
+                            <div class="my-4">
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

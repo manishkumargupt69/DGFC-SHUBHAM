@@ -1,0 +1,95 @@
+
+.login-left-box{
+    background-image: url(../../../../../assets/images/login-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px 0px 0px 8px;
+    padding: 0px 100px 0px 15px;
+}
+
+.login-right-box{
+    border-radius: 0px 8px 8px 0px;
+    padding: 0px 20px 0px 100px;
+}
+
+
+.outer-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.colored-background{
+    background-color: rgb(231, 231, 252);
+}
+
+.login-box{
+    width: 65%;
+    border-radius: 8px;
+}
+
+.dgfc-center-logo{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    background: #2273c9;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 53%;
+    top: 55%;
+    margin-left: -133px;
+    margin-top: -133px;
+    border: 20px solid #f3f3f9;
+}
+
+.form-container{
+    padding: 50px 0px;
+}
+
+.sign-in-text{
+    font-size: 22px;
+}
+
+@media screen and (max-width: 768px){
+    .login-box{
+        width: 90%;
+    } 
+
+    .form-container{
+        padding: 20px 0px;
+    }
+
+    .sign-in-text{
+        display: flex;
+        justify-content: center;
+        font-size: 28px;
+    }
+
+    .login-right-box{
+        position: absolute;
+        bottom: -200px 
+    }
+}
+
+@media screen and (max-width: 990px){
+    .login-right-box{
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    .dgfc-center-logo{
+        display: none;
+    }
+}
