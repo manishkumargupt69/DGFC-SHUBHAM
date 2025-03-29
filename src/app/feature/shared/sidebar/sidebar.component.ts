@@ -45,13 +45,13 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "company-master",
+                          "routeLink": "master/admin/company-dashboard",
                           "title": "Company Master",
                           "base": "company-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "department-master",
+                          "routeLink": "master/admin/department-dashboard",
                           "title": "Department Master",
                           "base": "department-master",
                           "isActive": false
