@@ -5,6 +5,13 @@ import { BranchDashboardComponent } from './branch-dashboard/branch-dashboard.co
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { AddEditCompanyComponent } from './add-edit-company/add-edit-company.component';
 import { DepartmentDashboardComponent } from './department-dashboard/department-dashboard.component';
+import { DesignationDashboardComponent } from './designation-dashboard/designation-dashboard.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { AddEditEmployeeComponent } from './add-edit-employee/add-edit-employee.component';
+import { CityDashboardComponent } from './city-dashboard/city-dashboard.component';
+import { AddEditCityComponent } from './add-edit-city/add-edit-city.component';
+import { QuickCodeComponent } from './quick-code/quick-code.component';
+import { ZoneDashboardComponent } from './zone-dashboard/zone-dashboard.component';
 
 const routes: Routes = [
   {
@@ -34,7 +41,43 @@ const routes: Routes = [
   {
     path:'department-dashboard',
     component:DepartmentDashboardComponent
-  }  
+  },  
+  {
+    path:'designation-dashboard',
+    component:DesignationDashboardComponent
+  },  
+  {
+    path:'employee-dashboard',
+    component:EmployeeDashboardComponent
+  },  
+  {
+    path:'employee/add',
+    component:AddEditEmployeeComponent
+  },
+  {
+    path: 'employee/:type/:id',
+    component:AddEditEmployeeComponent
+  },  
+  {
+    path:'city-dashboard',
+    component:CityDashboardComponent
+  },  
+  {
+    path:'city/add',
+    component:AddEditCityComponent
+  },
+  {
+    path: 'city/:type/:id',
+    component:AddEditCityComponent
+  },
+  {
+    path:'quick-code-dashboard',
+    component:QuickCodeComponent
+  },   
+  {
+    path:'zone-dashboard',
+    component:ZoneDashboardComponent
+  },   
 ];
 
 @NgModule({

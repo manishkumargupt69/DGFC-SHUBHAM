@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ColumnMode } from '@swimlane/ngx-datatable';
-import { AddEditDepartmentComponent } from '../add-edit-department/add-edit-department.component';
-import { MatDialog } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { AddEditZoneComponent } from '../add-edit-zone/add-edit-zone.component';
 import { ScreenviewService } from 'src/app/core/api-services/screen/screenview.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
-  selector: 'app-department-dashboard',
-  templateUrl: './department-dashboard.component.html',
-  styleUrls: ['./department-dashboard.component.scss']
+  selector: 'app-zone-dashboard',
+  templateUrl: './zone-dashboard.component.html',
+  styleUrls: ['./zone-dashboard.component.scss']
 })
-export class DepartmentDashboardComponent implements OnInit {
+export class ZoneDashboardComponent {
   data:any=[]
   filterData:any=[];
   screenWidth:number|undefined;
@@ -37,8 +37,8 @@ export class DepartmentDashboardComponent implements OnInit {
   }
 
 
-  openAddDepartment(){
-    let dialogRef = this.dialog.open(AddEditDepartmentComponent, {
+  openAddQuickCode(){
+    let dialogRef = this.dialog.open(AddEditZoneComponent, {
       width: this.screenWidth!<600?'100%':'40%',
       autoFocus: false,
       

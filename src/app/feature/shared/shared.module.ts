@@ -33,7 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     OnlyalphanumericDirective,
     OnlyNumericDirective,
     EmailDirective,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 export class SharedModule { }

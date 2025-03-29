@@ -16,5 +16,9 @@ export class AddEditDepartmentComponent implements OnInit {
    
   }
 
+  close(){
+    this.dialogRef.close()
+  }
+
 
 }

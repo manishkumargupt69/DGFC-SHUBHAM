@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
-import { AddEditDepartmentComponent } from '../add-edit-department/add-edit-department.component';
-import { MatDialog } from '@angular/material/dialog';
+import { AddEditQuickCodeComponent } from '../add-edit-quick-code/add-edit-quick-code.component';
 import { ScreenviewService } from 'src/app/core/api-services/screen/screenview.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-department-dashboard',
-  templateUrl: './department-dashboard.component.html',
-  styleUrls: ['./department-dashboard.component.scss']
+  selector: 'app-quick-code',
+  templateUrl: './quick-code.component.html',
+  styleUrls: ['./quick-code.component.scss']
 })
-export class DepartmentDashboardComponent implements OnInit {
+export class QuickCodeComponent {
   data:any=[]
   filterData:any=[];
   screenWidth:number|undefined;
@@ -37,8 +37,8 @@ export class DepartmentDashboardComponent implements OnInit {
   }
 
 
-  openAddDepartment(){
-    let dialogRef = this.dialog.open(AddEditDepartmentComponent, {
+  openAddQuickCode(){
+    let dialogRef = this.dialog.open(AddEditQuickCodeComponent, {
       width: this.screenWidth!<600?'100%':'40%',
       autoFocus: false,
       
@@ -50,4 +50,5 @@ export class DepartmentDashboardComponent implements OnInit {
     //   }
     // });
   }
+
 }

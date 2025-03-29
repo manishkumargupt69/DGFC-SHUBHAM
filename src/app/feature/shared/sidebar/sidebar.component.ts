@@ -57,25 +57,25 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "designation-master",
+                          "routeLink": "master/admin/designation-dashboard",
                           "title": "Designation Master",
                           "base": "designation-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "employee-master",
+                          "routeLink": "master/admin/employee-dashboard",
                           "title": "Employee Master",
                           "base": "employee-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "city-master",
+                          "routeLink": "master/admin/city-dashboard",
                           "title": "City Master",
                           "base": "city-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "quick-codes",
+                          "routeLink": "master/admin/quick-code-dashboard",
                           "title": "Quick Codes",
                           "base": "quick-codes",
                           "isActive": false
@@ -93,7 +93,7 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "zone-master",
+                          "routeLink": "master/admin/zone-dashboard",
                           "title": "Zone Master",
                           "base": "zone-master",
                           "isActive": false
