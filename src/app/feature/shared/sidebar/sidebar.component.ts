@@ -81,7 +81,7 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "user-master",
+                          "routeLink": "master/admin/user-dashboard",
                           "title": "User Master",
                           "base": "user-master",
                           "isActive": false
@@ -113,19 +113,19 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "fleet-traffic",
+                          "routeLink": "master/fleet/fleet-traffic-dashboard",
                           "title": "Fleet Traffic",
                           "base": "fleet-traffic",
                           "isActive": false
                       },
                       {
-                          "routeLink": "fuel-daily-rate",
+                          "routeLink": "master/fleet/daily-fuel-rate-dashboard",
                           "title": "Fuel Daily Rate",
                           "base": "fuel-daily-rate",
                           "isActive": false
                       },
                       {
-                          "routeLink": "route-master",
+                          "routeLink": "master/fleet/route-master-dashboard",
                           "title": "Route Master",
                           "base": "route-master",
                           "isActive": false

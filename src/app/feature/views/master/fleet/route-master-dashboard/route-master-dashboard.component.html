@@ -1,7 +1,7 @@
 <div class="card">
     <div class="d-flex justify-content-between align-items-center p-3">
-        <span class="title">Branch</span>
-        <button class="btn btn-primary-outline" [routerLink]="'/app/master/admin/branch/add'">Add Branch</button>
+        <span class="title">Route</span>
+        <button class="btn btn-primary-outline" [routerLink]="'/app/master/fleet/route-master/add'">Add Route</button>
     </div>
     <hr class="m-0">
     <div class="p-3">
@@ -12,8 +12,8 @@
             </div>
         </div>
 
-        <div class="table-responsive mt-4" id="myTable">
-            <ngx-datatable #dataTable class="material striped shadow-sm" [rows]="dataCopy" [headerHeight]="40"
+        <div class="table-responsive mt-4">
+            <ngx-datatable #dataTable class="material striped shadow-sm" [rows]="filterData" [headerHeight]="40"
                 [footerHeight]="50" rowHeight="auto" [columnMode]="ColumnMode.force" [count]="10" [scrollbarH]="true">
                 <ngx-datatable-column name="#" [width]="70" [canAutoResize]="false">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
@@ -28,49 +28,37 @@
                 </ngx-datatable-column>
 
 
-                <ngx-datatable-column name="Code" prop="code" [width]="150">
+                <ngx-datatable-column name="From" prop="from" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Type" prop="type" [width]="150">
+                <ngx-datatable-column name="To" prop="to" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Company Name" prop="companyName" [width]="150">
+                <ngx-datatable-column name="Tranport Mode" prop="transportMode" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Manager" prop="manager" [width]="150">
+                <ngx-datatable-column name="Total KM" prop="totalKM" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Opening date" prop="openingDate" [width]="150">
+                <ngx-datatable-column name="Transit Time(hrs)" prop="transitHrs" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Status" prop="status" [width]="150">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Address" prop="address" [width]="250">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Zone" prop="zone" [width]="100">
+                <ngx-datatable-column name="Transit Time(days)" prop="transitTimeDays" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>

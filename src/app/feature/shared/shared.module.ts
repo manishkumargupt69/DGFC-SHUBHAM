@@ -9,6 +9,7 @@ import { OnlyalphanumericDirective } from './directive/onlyalphanumeric.directiv
 import { OnlyNumericDirective } from './directive/only-numeric.directive';
 import { EmailDirective } from './directive/email.directive';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -34,6 +35,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     OnlyNumericDirective,
     EmailDirective,
     MatDialogModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

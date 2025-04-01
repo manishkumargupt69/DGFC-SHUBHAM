@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
+import { AuthService } from 'src/app/core/api-services/auth/auth.service';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-branch-dashboard',
@@ -97,7 +101,7 @@ export class BranchDashboardComponent implements OnInit {
   dataCopy:any = [...this.data]
   public ColumnMode = ColumnMode;
 
-  constructor() { }
+  constructor(private authservice:AuthService) { }
 
   ngOnInit() {
     
@@ -112,4 +116,36 @@ export class BranchDashboardComponent implements OnInit {
       )
     );
   }
+
+
+  downloadPdf(){
+    const divId = 'myTable'; // ID of the HTML section you want to convert
+      const fileName = 'Sample';
+
+      const reportName = 'Sample'; // Name of the report
+      // this.authservice.downloadPdf(divId, fileName, reportName);
+  }
+
+  downloadExcel(){
+    if (!this.data || this.data.length === 0) {
+      console.error("No data available for export!");
+      return;
+    }
+
+    // Convert the data array to a worksheet
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.data);
+
+    // Create a new workbook and append the worksheet
+    const workbook: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+
+    // Write the file and trigger download
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const fileData: Blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
+
+    saveAs(fileData, 'datatable.xlsx');
+  }
+
+  
+
 }

@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="p-3">
+        <span class="title">{{title}} Fleet Control</span>
+    </div>
+    <hr class="m-0">
+    <div class="p-3">
+        <form>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Date</label>
+                        <input type="date" class="form-control" name="date" appOnlyalphanumeric>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Fuel Company</label>
+                        <select name="company" class="form-select">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Fuel Type</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">City</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Rate</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr class="m-0">
+    <div class="d-flex justify-content-end p-3">
+        <button class="btn btn-primary-outline" (click)="close()">Cancel</button>
+        <button class="btn btn-primary ms-2">{{title=='Add'?'Save':'Update'}}</button>
+    </div>
+</div>

@@ -20,6 +20,8 @@ import { AddEditQuickCodeComponent } from './add-edit-quick-code/add-edit-quick-
 import { ZoneDashboardComponent } from './zone-dashboard/zone-dashboard.component';
 import { AddEditZoneComponent } from './add-edit-zone/add-edit-zone.component';
 import { AddEditDesignationComponent } from './add-edit-designation/add-edit-designation.component';
+import { UserMasterDashboardComponent } from './user-master-dashboard/user-master-dashboard.component';
+import { AddEditUserMasterComponent } from './add-edit-user-master/add-edit-user-master.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { AddEditDesignationComponent } from './add-edit-designation/add-edit-des
     QuickCodeComponent,
     AddEditQuickCodeComponent,
     ZoneDashboardComponent,
-    AddEditZoneComponent
+    AddEditZoneComponent,
+    UserMasterDashboardComponent,
+    AddEditUserMasterComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,8 @@ import { CityDashboardComponent } from './city-dashboard/city-dashboard.componen
 import { AddEditCityComponent } from './add-edit-city/add-edit-city.component';
 import { QuickCodeComponent } from './quick-code/quick-code.component';
 import { ZoneDashboardComponent } from './zone-dashboard/zone-dashboard.component';
+import { UserMasterDashboardComponent } from './user-master-dashboard/user-master-dashboard.component';
+import { AddEditUserMasterComponent } from './add-edit-user-master/add-edit-user-master.component';
 
 const routes: Routes = [
   {
@@ -77,6 +79,18 @@ const routes: Routes = [
   {
     path:'zone-dashboard',
     component:ZoneDashboardComponent
+  },   
+  {
+    path:'user-dashboard',
+    component:UserMasterDashboardComponent
+  },   
+  {
+    path:'user/add',
+    component:AddEditUserMasterComponent
+  },   
+  {
+    path:'user/:type/:id',
+    component:AddEditUserMasterComponent
   },   
 ];
 
