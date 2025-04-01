@@ -23,6 +23,14 @@ const routes: Routes = [
       {
         path: 'master/admin',
         loadChildren: () => import('./views/master/admin/admin.module').then((m) => m.AdminModule)
+      },
+      {
+        path: 'master/fleet',
+        loadChildren: () => import('./views/master/fleet/fleet.module').then((m) => m.FleetModule)
+      },
+      {
+        path: 'master/operations',
+        loadChildren: () => import('./views/master/operations/operations.module').then((m) => m.OperationsModule)
       }
     ]
   },

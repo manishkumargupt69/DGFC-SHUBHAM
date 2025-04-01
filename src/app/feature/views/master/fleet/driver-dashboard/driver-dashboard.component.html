@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="d-flex justify-content-between align-items-center p-3">
+        <span class="title">Driver Dashboard</span>
+        <button class="btn btn-primary-outline" [routerLink]="'/app/master/fleet/driver/add'">Add Driver</button>
+    </div>
+    <hr class="m-0">
+    <div class="p-3">
+        <div style="max-width: 350px;">
+            <div class="form-field">
+                <input type="text" id="search" class="form-control" placeholder="Search" (input)="filterTable($event)">
+                <i class="fa-solid fa-magnifying-glass input-icons"></i>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-4">
+            <ngx-datatable #dataTable class="material striped shadow-sm" [rows]="filterData" [headerHeight]="40"
+                [footerHeight]="50" rowHeight="auto" [columnMode]="ColumnMode.force" [count]="10" [scrollbarH]="true">
+                <ngx-datatable-column name="#" [width]="70" [canAutoResize]="false">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ rowIndex + 1 }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Photo" prop="photo" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Name" prop="name" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Code" prop="code" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Phone" prop="phone" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Religon" prop="religon" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Guarantor Name" prop="guarantorName" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Account No" prop="accountNo" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Last Working Day" prop="lastWorkingDay" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Is Active" prop="isActive" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span>{{ value }}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Action" prop="id" [width]="150">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div>
+                            <i class="fa-solid fa-eye pointer"></i>
+                            <i class="fa-solid fa-pen-to-square pointer ms-3" style="color: #1b3e99;"></i>
+                        </div>
+                    </ng-template>
+                </ngx-datatable-column>
+
+
+            </ngx-datatable>
+        </div>
+    </div>
+</div>

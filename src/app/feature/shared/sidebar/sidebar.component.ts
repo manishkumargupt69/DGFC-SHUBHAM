@@ -107,7 +107,7 @@ export class SidebarComponent implements OnInit {
                   "isActive": false,
                   "subItems": [
                       {
-                          "routeLink": "driver-master",
+                          "routeLink": "master/fleet/driver-dashboard",
                           "title": "Driver Master",
                           "base": "driver-master",
                           "isActive": false
@@ -173,7 +173,13 @@ export class SidebarComponent implements OnInit {
                           "title": "Consignee Mangement",
                           "base": "consignee-mangement",
                           "isActive": false
-                      }
+                      },
+                      {
+                          "routeLink": "master/operations/service-network-dashboard",
+                          "title": "Service Network",
+                          "base": "service-network",
+                          "isActive": false
+                      },
                   ]
               },
               {

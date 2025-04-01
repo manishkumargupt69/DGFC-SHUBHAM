@@ -11,7 +11,6 @@ import { SharedModule } from 'src/app/feature/shared/shared.module';
 import { AddEditDepartmentComponent } from './add-edit-department/add-edit-department.component';
 import { DepartmentDashboardComponent } from './department-dashboard/department-dashboard.component';
 import { DesignationDashboardComponent } from './designation-dashboard/designation-dashboard.component';
-import { AddEditDesignationComponent } from './add-edit-designation/add-edit-designation.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { AddEditEmployeeComponent } from './add-edit-employee/add-edit-employee.component';
 import { AddEditCityComponent } from './add-edit-city/add-edit-city.component';
@@ -20,6 +19,7 @@ import { QuickCodeComponent } from './quick-code/quick-code.component';
 import { AddEditQuickCodeComponent } from './add-edit-quick-code/add-edit-quick-code.component';
 import { ZoneDashboardComponent } from './zone-dashboard/zone-dashboard.component';
 import { AddEditZoneComponent } from './add-edit-zone/add-edit-zone.component';
+import { AddEditDesignationComponent } from './add-edit-designation/add-edit-designation.component';
 
 
 @NgModule({

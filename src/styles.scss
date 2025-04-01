@@ -44,12 +44,12 @@ $template-theme: mat.define-light-theme((color: (primary: $template-primary,
     font-size: 12px;
 }
 
-input{
-    height: 42px;
+input, select{
+    height: 40px;
 }
 
 .form-select{
-    height: 42px;
+    height: 40px;
 }
 
 .select{
@@ -68,6 +68,14 @@ input{
 }
 
 .form-control.is-invalid{
+    background-image: none;
+}
+
+.form-select:focus{
+    box-shadow: none;
+}
+
+.form-select.is-invalid{
     background-image: none;
 }
 

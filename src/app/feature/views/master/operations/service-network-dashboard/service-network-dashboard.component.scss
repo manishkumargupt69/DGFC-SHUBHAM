@@ -1,0 +1,9 @@
+.search-containers{
+    display: flex;
+}
+
+@media (max-wdith:500px){
+    .search-containers{
+        flex-direction: column;
+    }
+}
