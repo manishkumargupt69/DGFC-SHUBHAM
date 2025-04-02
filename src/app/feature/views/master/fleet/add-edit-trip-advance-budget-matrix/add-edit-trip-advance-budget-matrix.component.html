@@ -1,0 +1,117 @@
+<div class="card">
+    <div class="p-3">
+        <span class="title">{{title}} Trip Advance Budget Matrix</span>
+    </div>
+    <hr class="m-0">
+    <div class="p-3">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Code</label>
+                        <input type="text" class="form-control" name="name" appOnlyalphanumeric>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Vechile Type</label>
+                        <select name="company" class="form-select">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Service Type</label>
+                        <select name="company" class="form-select">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Effective Date From</label>
+                        <input type="date" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Effective Date To</label>
+                        <input type="date" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Trip Adv. Zone From</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Trip Adv. Zone To</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Gross Weight From Ton</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Gross Weight To Ton</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Fuel Avg. Per Ltr.</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Cash Per KM</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Add Fuel Avg. Per Ltr.</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Add Cash Per KM</label>
+                        <input type="number" name="company" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Remark</label>
+                        <input type="text" class="form-control" name="name" appOnlyalphanumeric>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-3">
+                    <div class="form-field">
+                        <label class="label">Status*</label>
+                        <select name="state" class="form-select">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr class="m-0">
+    <div class="d-flex justify-content-end p-3">
+        <button class="btn btn-primary-outline"
+            [routerLink]="'/app/master/fleet/trip-advance-budget-matrix-dashboard'">Cancel</button>
+        <button class="btn btn-primary ms-2">{{title=='Add'?'Save':'Update'}}</button>
+    </div>
+</div>

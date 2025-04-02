@@ -131,25 +131,25 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "trip-advance-budget-matrix",
+                          "routeLink": "master/fleet/trip-advance-budget-matrix-dashboard",
                           "title": "Trip Advance Budget Matrix",
                           "base": "trip-advance-budget-matrix",
                           "isActive": false
                       },
                       {
-                          "routeLink": "vehile-master",
-                          "title": "Vehile Master",
-                          "base": "vehile-master",
+                          "routeLink": "master/fleet/vechile-master-dashboard",
+                          "title": "Vechile Master",
+                          "base": "vechile-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "vehicle-models",
+                          "routeLink": "master/fleet/vechile-model-dashboard",
                           "title": "Vehicle Models",
                           "base": "vehicle-models",
                           "isActive": false
                       },
                       {
-                          "routeLink": "vehicle-type-master",
+                          "routeLink": "master/fleet/vechile-type-dashboard",
                           "title": "Vehicle Type Master",
                           "base": "vehicle-type-master",
                           "isActive": false

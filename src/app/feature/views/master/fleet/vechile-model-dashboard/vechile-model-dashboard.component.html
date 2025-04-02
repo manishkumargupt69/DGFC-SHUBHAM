@@ -1,8 +1,8 @@
 <div class="card">
     <div class="d-flex justify-content-between align-items-center p-3">
-        <span class="title">Fleet Traffic</span>
-        <button class="btn btn-primary-outline" (click)="openAddFleetTraffic()">Add Fleet
-            Traffic</button>
+        <span class="title">Vechile Model</span>
+        <button class="btn btn-primary-outline" (click)="openAddVechileModel()">Add
+            Vechile Model</button>
     </div>
     <hr class="m-0">
     <div class="p-3">
@@ -22,43 +22,26 @@
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Code" prop="code" [width]="150">
+                <ngx-datatable-column name="Brand" prop="brand" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Hub Name" prop="hubName" [width]="150">
+
+                <ngx-datatable-column name="Model" prop="model" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Hub Code" prop="hubCode" [width]="150">
+                <ngx-datatable-column name="Emission Standard" prop="effectivePeriod" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="Fleet Supervisor" prop="fleetSupervisor" [width]="150">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Fleet Supervisor Emp. Code" prop="fleetSupervisorEmpCode" [width]="150">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Phone" prop="phone" [width]="150">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Email" prop="email" [width]="150">
+                <ngx-datatable-column name="Vechile Tyres" prop="vechileTyres" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
