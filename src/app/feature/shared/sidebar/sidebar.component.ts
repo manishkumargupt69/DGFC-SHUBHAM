@@ -163,13 +163,13 @@ export class SidebarComponent implements OnInit {
                   "isActive": false,
                   "subItems": [
                       {
-                          "routeLink": "material-master",
+                          "routeLink": "master/operations/material-master-dashboard",
                           "title": "Material Master",
                           "base": "material-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "consignee-mangement",
+                          "routeLink": "master/operations/consignee-management-dashboard",
                           "title": "Consignee Mangement",
                           "base": "consignee-mangement",
                           "isActive": false

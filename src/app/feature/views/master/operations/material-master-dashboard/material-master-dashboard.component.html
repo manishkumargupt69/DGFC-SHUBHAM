@@ -1,32 +1,14 @@
 <div class="card">
     <div class="d-flex justify-content-between align-items-center p-3">
-        <span class="title">Service Network</span>
-        <button class="btn btn-primary-outline" [routerLink]="'/app/master/operations/service-network/add'">Add Service
-            Network</button>
+        <span class="title">Material</span>
+        <button class="btn btn-primary-outline" (click)="openAddFMaterialMaster()">Add Material</button>
     </div>
     <hr class="m-0">
     <div class="p-3">
-        <div class="search-containers">
-            <div style="max-width: 200px;">
-                <div class="form-field">
-                    <input type="text" id="search" class="form-control" placeholder="Service Type"
-                        (input)="filterTable($event)">
-                    <i class="fa-solid fa-magnifying-glass input-icons"></i>
-                </div>
-            </div>
-            <div style="max-width: 200px;" class="mx-3">
-                <div class="form-field">
-                    <input type="text" id="search" class="form-control" placeholder="From Loaction"
-                        (input)="filterTable($event)">
-                    <i class="fa-solid fa-magnifying-glass input-icons"></i>
-                </div>
-            </div>
-            <div style="max-width: 200px;">
-                <div class="form-field">
-                    <input type="text" id="search" class="form-control" placeholder="To Loaction"
-                        (input)="filterTable($event)">
-                    <i class="fa-solid fa-magnifying-glass input-icons"></i>
-                </div>
+        <div style="max-width: 350px;">
+            <div class="form-field">
+                <input type="text" id="search" class="form-control" placeholder="Search" (input)="filterTable($event)">
+                <i class="fa-solid fa-magnifying-glass input-icons"></i>
             </div>
         </div>
 
@@ -45,25 +27,20 @@
                     </ng-template>
                 </ngx-datatable-column>
 
+
                 <ngx-datatable-column name="Code" prop="code" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="From" prop="from" [width]="150">
+                <ngx-datatable-column name="HSN Code" prop="hsnCode" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>
                 </ngx-datatable-column>
 
-                <ngx-datatable-column name="To" prop="to" [width]="150">
-                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-                        <span>{{ value }}</span>
-                    </ng-template>
-                </ngx-datatable-column>
-
-                <ngx-datatable-column name="Transit Time" prop="transitTime" [width]="150">
+                <ngx-datatable-column name="Remark" prop="remark" [width]="150">
                     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
                         <span>{{ value }}</span>
                     </ng-template>

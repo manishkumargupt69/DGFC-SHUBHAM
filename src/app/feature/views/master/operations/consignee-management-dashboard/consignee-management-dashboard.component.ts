@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
-  selector: 'app-service-network-dashboard',
-  templateUrl: './service-network-dashboard.component.html',
-  styleUrls: ['./service-network-dashboard.component.scss']
+  selector: 'app-consignee-management-dashboard',
+  templateUrl: './consignee-management-dashboard.component.html',
+  styleUrls: ['./consignee-management-dashboard.component.scss']
 })
-export class ServiceNetworkDashboardComponent {
-  data:any=[
+export class ConsigneeManagementDashboardComponent {
+ data:any=[
     {
       name:'test'
     }
