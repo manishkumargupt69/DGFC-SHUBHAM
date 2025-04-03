@@ -189,13 +189,13 @@ export class SidebarComponent implements OnInit {
                   "isActive": false,
                   "subItems": [
                       {
-                          "routeLink": "customer-master",
+                          "routeLink": "master/credit-control/customer-master-dashboard",
                           "title": "Customer Master",
                           "base": "customer-master",
                           "isActive": false
                       },
                       {
-                          "routeLink": "billing-party",
+                          "routeLink": "master/credit-control/billing-party-dashboard",
                           "title": "Billing Party",
                           "base": "billing-party",
                           "isActive": false
@@ -207,7 +207,7 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "payment-terms",
+                          "routeLink": "master/credit-control/payment-terms-dashboard",
                           "title": "Payment Terms",
                           "base": "payment-terms",
                           "isActive": false
