@@ -152,7 +152,8 @@ data:any={
 
       const headers: string[] = jsonData[0].map((h: any) => h?.toString().toLowerCase().trim());
 
-      const allowedHeaders = ['1', '2','3'];
+      const allowedHeaders = ['Vechile No.', 'Advance Date','Advance Type','Amount','Reference No.','Diesel Vendor','Diesel Rate',
+        'Diesel Ltr','Bill No.','Branch Account','Happay Account','Remarks'];
       const invalidHeaders = headers.filter(h => !allowedHeaders.includes(h));
 
       if (invalidHeaders.length > 0) {

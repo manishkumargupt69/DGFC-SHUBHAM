@@ -6,12 +6,16 @@ import { AddEditAccountLedgerComponent } from './add-edit-account-ledger/add-edi
 import { AccountLedgerDashboardComponent } from './account-ledger-dashboard/account-ledger-dashboard.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { SharedModule } from 'src/app/feature/shared/shared.module';
+import { VendorMasterDashboardComponent } from './vendor-master-dashboard/vendor-master-dashboard.component';
+import { AddEditVendorMasterComponent } from './add-edit-vendor-master/add-edit-vendor-master.component';
 
 
 @NgModule({
   declarations: [
     AddEditAccountLedgerComponent,
-    AccountLedgerDashboardComponent
+    AccountLedgerDashboardComponent,
+    VendorMasterDashboardComponent,
+    AddEditVendorMasterComponent
   ],
   imports: [
     CommonModule,

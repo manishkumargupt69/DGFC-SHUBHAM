@@ -247,7 +247,7 @@ export class SidebarComponent implements OnInit {
                           "isActive": false
                       },
                       {
-                          "routeLink": "vendor-master",
+                          "routeLink": "master/accounts/vendor-master-dashboard",
                           "title": "Vendor Master",
                           "base": "vendor-master",
                           "isActive": false
