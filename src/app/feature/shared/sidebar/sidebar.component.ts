@@ -241,7 +241,7 @@ export class SidebarComponent implements OnInit {
                   "isActive": false,
                   "subItems": [
                       {
-                          "routeLink": "account-ledger",
+                          "routeLink": "master/accounts/account-ledger-dashboard",
                           "title": "Account Ledger",
                           "icon": "fa-solid fa-truck",                        
                           "isActive": false

@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: 'master/credit-control',
         loadChildren: () => import('./views/master/credit-control/credit-control.module').then((m) => m.CreditControlModule)
+      },
+      {
+        path: 'master/accounts',
+        loadChildren: () => import('./views/master/accounts/accounts.module').then((m) => m.AccountsModule)
       }
     ]
   },
