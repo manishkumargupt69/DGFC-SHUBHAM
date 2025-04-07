@@ -2,3 +2,22 @@
     width: 100%;
     height: calc(100vh - 190px);
 }
+
+.small-text{
+    font-size: 13px;
+}
+
+.clr-text{
+    font-size: 14px;
+    color: #7539ff;
+}
+
+.travel-history{
+    height: 60vh;
+    overflow: auto;
+    position: relative;
+    z-index: 10000;
+    position: absolute;
+    left: 419px;
+    width: 100%;
+}

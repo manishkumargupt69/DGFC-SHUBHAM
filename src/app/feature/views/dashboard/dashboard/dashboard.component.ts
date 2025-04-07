@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit, AfterViewInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 data:any={
   "fileID": 12,
   "fileTypeID": 144,
@@ -25,31 +30,139 @@ data:any={
 
   constructor(private sanitizer: DomSanitizer){
 
-    // try {
-    //   const base64Data = this.data.fileDetails
-    //   const byteCharacters = atob(base64Data);
-    //   const byteNumbers = new Array(byteCharacters.length);
-    //   for (let i = 0; i < byteCharacters.length; i++) {
-    //     byteNumbers[i] = byteCharacters.charCodeAt(i);
-    //   }
-    //   const byteArray = new Uint8Array(byteNumbers);
-    //   const blob = new Blob([byteArray], { type: 'application/pdf' });
-    //   const blobURL = URL.createObjectURL(blob);
-    //   this.pdfURLSafe = this.sanitizer.bypassSecurityTrustResourceUrl(blobURL);
-    // } catch (error) {
-    //   console.error('Error creating PDF:', error);
-    //   this.pdfURLSafe = null;
-    // }
+    try {
+      const base64Data = this.data.fileDetails
+      const byteCharacters = atob(base64Data);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'application/pdf' });
+      const blobURL = URL.createObjectURL(blob);
+      this.pdfURLSafe = this.sanitizer.bypassSecurityTrustResourceUrl(blobURL);
+    } catch (error) {
+      console.error('Error creating PDF:', error);
+      this.pdfURLSafe = null;
+    }
   }
 
 
-  // download() {
-    
-  //     const link = document.createElement('a');
-  //     link.href = this.data.fileDetails;
-  //     link.download = 'document.pdf';
-  //     link.click();
-   
-  // }
+  download() {
+    const link = document.createElement('a');
+    link.href = this.data.fileDetails;
+    link.download = 'document.pdf';
+    link.click();
+  }
 
+
+  
+  map: any;
+  truckMarker: any;
+  directionsService: any;
+  directionsRenderer: any;
+  routeCoordinates: any[] = [];
+  currentIndex = 0;
+  isTravelHistoryCardOpen = false;
+
+  ngAfterViewInit() {
+    if (typeof google !== 'undefined') {
+      this.loadMap();
+    } else {
+      window.addEventListener('load', () => this.loadMap());
+    }
+  }
+
+  loadMap() {
+    this.map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
+      center: { lat: 28.6139, lng: 77.2090 }, // Delhi
+      zoom: 11,
+    });
+
+    this.directionsService = new google.maps.DirectionsService();
+    this.directionsRenderer = new google.maps.DirectionsRenderer({ map: this.map });
+
+    this.calculateRoute();
+  }
+
+  calculateRoute() {
+    const request = {
+      origin: { lat: 28.6139, lng: 77.2090 }, // Delhi
+      destination: { lat: 28.4595, lng: 77.0266 }, // Gurgaon
+      travelMode: google.maps.TravelMode.DRIVING,
+    };
+
+    this.directionsService.route(request, (result: any, status: any) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        this.directionsRenderer.setDirections(result);
+        this.extractRoute(result);
+      } else {
+        console.error("Directions request failed: " + status);
+      }
+    });
+  }
+
+  extractRoute(result: any) {
+    const route = result.routes[0].legs[0].steps;
+    this.routeCoordinates = route.map((step: any) => step.start_location);
+
+    this.truckMarker = new google.maps.Marker({
+      position: this.routeCoordinates[0],
+      map: this.map,
+      title: "Truck",
+      icon: "https://maps.google.com/mapfiles/ms/icons/truck.png",
+    });
+
+    this.simulateTruckMovement();
+  }
+
+  simulateTruckMovement() {
+    setInterval(() => {
+      if (this.currentIndex < this.routeCoordinates.length - 1) {
+        this.currentIndex++;
+        this.truckMarker.setPosition(this.routeCoordinates[this.currentIndex]);
+        this.map.panTo(this.routeCoordinates[this.currentIndex]);
+      }
+    }, 2000);
+  }
+
+  toggleTravelHistoryCard(){
+    this.isTravelHistoryCardOpen = !this.isTravelHistoryCardOpen;
+  }
+
+  errorMessage: string | null = null;
+
+  onFileChange(event: any) {
+    const target: DataTransfer = <DataTransfer>(event.target);
+    if (target.files.length !== 1) {
+      this.errorMessage = 'Please select a single Excel file.';
+      return;
+    }
+
+    const file = target.files[0];
+    const reader: FileReader = new FileReader();
+
+    reader.onload = (e: any) => {
+      const binaryStr: string = e.target.result;
+      const workbook = XLSX.read(binaryStr, { type: 'binary' });
+
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const jsonData: any[][] = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      const headers: string[] = jsonData[0].map((h: any) => h?.toString().toLowerCase().trim());
+
+      const allowedHeaders = ['1', '2','3'];
+      const invalidHeaders = headers.filter(h => !allowedHeaders.includes(h));
+
+      if (invalidHeaders.length > 0) {
+        this.errorMessage = `Invalid columns found: ${invalidHeaders.join(', ')}`;
+      } else {
+        this.errorMessage = null;
+        console.log('✅ Valid Excel file!');
+      }
+    };
+
+    reader.readAsBinaryString(file);
+  }
 }

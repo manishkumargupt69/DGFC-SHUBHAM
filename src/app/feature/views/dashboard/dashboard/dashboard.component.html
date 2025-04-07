@@ -4,3 +4,84 @@
 <div>hjk</div> -->
 
 <!-- <button (click)="download()" class="btn btn-primary">download</button> -->
+<input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
+<p *ngIf="errorMessage" style="color: red">{{ errorMessage }}</p>
+<div class="d-flex">
+
+    <div class="col-lg-4 col-sm-12" style="position: relative;">
+        <!-- travel History  -->
+        <div *ngIf="isTravelHistoryCardOpen" class="card travel-history">
+            <div class="d-flex justify-content-between ">
+                <span class="text-success title">HR55W0139</span>
+                <div class="small-text">
+                    <i class="fa-solid fa-add me-3 pointer"></i>
+                    <i class="fa-solid fa-briefcase me-3 pointer"></i>
+                    <span class="text-success me-3 pointer"> Running
+                        <i class="fa-solid fa-road"></i>
+                    </span>
+                    <i class="fa-solid fa-circle-info pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 pointer" style="height: 60vh;overflow: auto;" (click)="toggleTravelHistoryCard()">
+            <div>
+                <div class="d-flex justify-content-between ">
+                    <span class="text-success title">HR55W0139</span>
+                    <div class="small-text">
+                        <i class="fa-solid fa-add me-3 pointer"></i>
+                        <i class="fa-solid fa-briefcase me-3 pointer"></i>
+                        <span class="text-success me-3 pointer"> Running
+                            <i class="fa-solid fa-road"></i>
+                        </span>
+                        <i class="fa-solid fa-circle-info pointer"></i>
+                    </div>
+                </div>
+                <div class="text-success mt-2">(UPS)</div>
+                <div class="mt-2 small-text">
+                    Vechile Type: 10T Container
+                </div>
+                <div class="mt-2 small-text">
+                    Driver Mobile: <span class="clr-text">1234567890</span>, Fleet: Jamaludin
+                </div>
+                <div class="mt-2 small-text">
+                    Status: In Trip(Ranchi)
+                </div>
+                <div class="mt-2 small-text">
+                    Vechile Status Date: 03-Apr-25 10:00 AM
+                </div>
+                <div class="mt-2 small-text">
+                    Segment COntainer: 10T
+                </div>
+                <div class="mt-3 small-text">
+                    <div>Last Speed: 45Km/h </div>
+                    <div>Last Position Time: 04-Apr-25 12:00 AM </div>
+                    <div>Last Location Time: 04-Apr-25 12:00 AM </div>
+                </div>
+                <div class="mt-3 text-secondary">
+                    <div>Customer: <span class="clr-text">MRF</span> Consignor: <span class="clr-text">MRF
+                            Arkonam</span>
+                    </div>
+                    <div>Consignee: <span class="clr-text">MRF</span> Trip Start Date: <span
+                            class="clr-text">03-April-2025</span>
+                    </div>
+                    <div>Route: <span class="clr-text">ARKONAM to Ranchi(1631 km)</span></div>
+                </div>
+                <div class="mt-3">
+                    <span class="clr-text">Delayed (0D 13H)</span>
+                </div>
+                <div class="mt-2">
+                    <div>Trip KM Covered: 166</div>
+                    <div>Trip KM Remaining: 1465</div>
+                </div>
+                <div class="mt-2">
+                    <div class="text-secondary">Expected ETA: <span class="clr-text">07-April-25 08:44PM</span></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-lg-8 col-sm-12">
+        <div sty #mapContainer id="map" style="height: 60vh; width: 100%;"></div>
+    </div>
+</div>
