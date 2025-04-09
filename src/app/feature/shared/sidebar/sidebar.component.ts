@@ -264,14 +264,14 @@ export class SidebarComponent implements OnInit {
           "isActive": false,
           "subMenu": [
               {
-                  "routeLink": "booking-request-mangement",
+                  "routeLink": "operations/booking-request-dashboard",
                   "title": "Booking Request Mangement",
                   "base": "booking-request-mangement",
                   "isActive": false,
                   "subItems": []
               },
               {
-                  "routeLink": "trip-management",
+                  "routeLink": "operations/trip-dashboard",
                   "title": "Trip Management",
                   "base": "trip-management",
                   "isActive": false,
@@ -802,7 +802,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  handleSubMenuClick(drawerItemIndex: number, subMenuIndex: number,event:any) {
+  handleSubMenuClick(drawerItemIndex: number, subMenuIndex: number,event:any) {    
     event.stopPropagation(); 
     this.base = this.drawerItems[drawerItemIndex].subMenu[subMenuIndex].base;
     this.drawerItems[drawerItemIndex].subMenu.forEach((x:any)=>{

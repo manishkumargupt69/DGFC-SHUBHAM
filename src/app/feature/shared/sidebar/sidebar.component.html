@@ -24,7 +24,8 @@
                         <ul *ngIf="item.expanded" class="sub-menu">
                             <li *ngFor="let subItem of item.subMenu;let subItemIndex=index"
                                 [class.submenu-active]="activeRoute === subItem.route">
-                                <div class="sub-item li-item" (click)="toggleSubItem(subItem, item,$event)">
+                                <div class="sub-item li-item"
+                                    (click)="toggleSubItem(subItem, item,$event);handleSubMenuClick(itemIndex,subItemIndex,$event)">
                                     {{ subItem.title }}
                                     <i *ngIf="subItem.subItems" class="menu-arrow"
                                         [class.menu-down-arrow]="subItem.expanded"></i>

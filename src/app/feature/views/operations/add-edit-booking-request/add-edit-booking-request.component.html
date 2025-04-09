@@ -1,0 +1,128 @@
+<div class="card">
+    <div class="p-3">
+        <span class="title">{{title}} Booking Request</span>
+    </div>
+    <hr class="m-0">
+    <div class="p-3">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Request From</label>
+                        <select name="company" class="form-select">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Indent Received Date</label>
+                        <input type="date" class="form-control" name="name" appOnlyalphanumeric>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-2">
+                    <div class="form-field">
+                        <label class="label">Customer</label>
+                        <input type="text" class="form-control" name="name" appOnlyalphanumeric>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">From</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">To</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Route</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Consignor</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Consignee</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Serving Branch</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Load Request</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Material Group</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Vechile Type</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Placement Need Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Indent Status</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Service Type</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-s-12 mt-4">
+                    <div class="form-field">
+                        <label class="label">Service Using Vehicle*</label>
+                        <select name="company" class="form-select">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr class="m-0">
+    <div class="d-flex justify-content-end p-3">
+        <button class="btn btn-primary-outline"
+            [routerLink]="'/app/operations/booking-request-dashboard'">Cancel</button>
+        <button class="btn btn-primary ms-2">{{title=='Add'?'Save':'Update'}}</button>
+    </div>
+</div>

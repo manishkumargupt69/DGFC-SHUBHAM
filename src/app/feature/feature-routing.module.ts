@@ -39,6 +39,10 @@ const routes: Routes = [
       {
         path: 'master/accounts',
         loadChildren: () => import('./views/master/accounts/accounts.module').then((m) => m.AccountsModule)
+      },
+      {
+        path: 'operations',
+        loadChildren: () => import('./views/operations/operations.module').then((m) => m.OperationsModule)
       }
     ]
   },
