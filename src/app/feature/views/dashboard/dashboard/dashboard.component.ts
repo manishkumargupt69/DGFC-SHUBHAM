@@ -8,7 +8,7 @@ import * as XLSX from 'xlsx';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -57,79 +57,7 @@ data:any={
 
 
   
-  map: any;
-  truckMarker: any;
-  directionsService: any;
-  directionsRenderer: any;
-  routeCoordinates: any[] = [];
-  currentIndex = 0;
-  isTravelHistoryCardOpen = false;
-
-  ngAfterViewInit() {
-    if (typeof google !== 'undefined') {
-      this.loadMap();
-    } else {
-      window.addEventListener('load', () => this.loadMap());
-    }
-  }
-
-  loadMap() {
-    this.map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
-      center: { lat: 28.6139, lng: 77.2090 }, // Delhi
-      zoom: 11,
-    });
-
-    this.directionsService = new google.maps.DirectionsService();
-    this.directionsRenderer = new google.maps.DirectionsRenderer({ map: this.map });
-
-    this.calculateRoute();
-  }
-
-  calculateRoute() {
-    const request = {
-      origin: { lat: 28.6139, lng: 77.2090 }, // Delhi
-      destination: { lat: 28.4595, lng: 77.0266 }, // Gurgaon
-      travelMode: google.maps.TravelMode.DRIVING,
-    };
-
-    this.directionsService.route(request, (result: any, status: any) => {
-      if (status === google.maps.DirectionsStatus.OK) {
-        this.directionsRenderer.setDirections(result);
-        this.extractRoute(result);
-      } else {
-        console.error("Directions request failed: " + status);
-      }
-    });
-  }
-
-  extractRoute(result: any) {
-    const route = result.routes[0].legs[0].steps;
-    this.routeCoordinates = route.map((step: any) => step.start_location);
-
-    this.truckMarker = new google.maps.Marker({
-      position: this.routeCoordinates[0],
-      map: this.map,
-      title: "Truck",
-      icon: "https://maps.google.com/mapfiles/ms/icons/truck.png",
-    });
-
-    this.simulateTruckMovement();
-  }
-
-  simulateTruckMovement() {
-    setInterval(() => {
-      if (this.currentIndex < this.routeCoordinates.length - 1) {
-        this.currentIndex++;
-        this.truckMarker.setPosition(this.routeCoordinates[this.currentIndex]);
-        this.map.panTo(this.routeCoordinates[this.currentIndex]);
-      }
-    }, 2000);
-  }
-
-  toggleTravelHistoryCard(){
-    this.isTravelHistoryCardOpen = !this.isTravelHistoryCardOpen;
-  }
-
+ 
   errorMessage: string | null = null;
 
   onFileChange(event: any) {
