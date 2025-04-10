@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
-    dgfcEndPoint: 'http://13.200.215.244:8081/'
-  };
+  production: false,
+  dgfcEndPoint: 'https://uatapi.dgfc.in/api/'
+};

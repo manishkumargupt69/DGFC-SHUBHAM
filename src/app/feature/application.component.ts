@@ -10,8 +10,10 @@ export class ApplicationComponent {
   isSidebarOpen = false;
   isProcessing = false;
 
-  constructor(private appStateService: AppStateService){
+  constructor(private appStateService: AppStateService) {
     this.appStateService.isProcessing().subscribe(res => {
+      console.log(res);
+
       setTimeout(() => {
         this.isProcessing = res;
       }, 0);
@@ -22,5 +24,5 @@ export class ApplicationComponent {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
- 
+
 }

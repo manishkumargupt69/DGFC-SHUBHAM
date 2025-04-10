@@ -26,8 +26,8 @@
                     <form class="mt-5" #loginForm="ngForm">
                         <div>
                             <div class="form-field my-4">
-                                <label class="label">Email/Username*</label>
-                                <input type="text" class="form-control" name="email" [(ngModel)]="data.email"
+                                <label class="label">Username*</label>
+                                <input type="text" class="form-control" name="email" [(ngModel)]="data.userName"
                                     #email="ngModel" required
                                     [ngClass]="{'is-invalid':email.touched && email.errors && email.errors['required']}">
                                 <p *ngIf="email.touched && email.errors && email.errors['required']"
@@ -39,7 +39,7 @@
                             <div class="form-field my-4 pb-0">
                                 <label class="label">Password*</label>
                                 <input type="{{isPasswordVisible?'text':'password'}}" class="form-control"
-                                    [(ngModel)]="data.password" #password="ngModel" name="password" required
+                                    [(ngModel)]="data.passwordHash" #password="ngModel" name="password" required
                                     [ngClass]="{'is-invalid':password.touched && password.errors && password.errors['required']}">
                                 <i *ngIf="isPasswordVisible" (click)="isPasswordVisible=false"
                                     class="fa-regular fa-eye input-icons"></i>
@@ -56,7 +56,7 @@
                                     Password</div>
                             </div>
                             <div class="my-4">
-                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                <button type="submit" class="btn btn-primary w-100" (click)="onSubmit()">Submit</button>
                             </div>
                         </div>
                     </form>
