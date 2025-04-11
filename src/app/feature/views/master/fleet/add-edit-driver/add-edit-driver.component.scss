@@ -39,4 +39,8 @@
     object-fit: contain;
     // border: 1px solid #ccc;
   }
+
+  video {
+    transform: scaleX(-1); /* Flip horizontally */
+  }
   
