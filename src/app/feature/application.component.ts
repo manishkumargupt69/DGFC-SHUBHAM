@@ -12,8 +12,6 @@ export class ApplicationComponent {
 
   constructor(private appStateService: AppStateService) {
     this.appStateService.isProcessing().subscribe(res => {
-      console.log(res);
-
       setTimeout(() => {
         this.isProcessing = res;
       }, 0);

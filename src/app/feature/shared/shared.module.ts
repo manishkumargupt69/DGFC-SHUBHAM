@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LoaderComponent } from './loader/loader.component';
@@ -10,6 +10,7 @@ import { OnlyNumericDirective } from './directive/only-numeric.directive';
 import { EmailDirective } from './directive/email.directive';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { ClickOutsideDirective } from './directive/click-outside.directive';
 
 
 
@@ -21,11 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     OnlyalphanumericDirective,
     OnlyNumericDirective,
     EmailDirective,
+    ClickOutsideDirective,
   ],
   imports: [
     CommonModule,
     MatExpansionModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     SidebarComponent,
@@ -35,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     OnlyNumericDirective,
     EmailDirective,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ClickOutsideDirective
   ]
 })
 export class SharedModule { }

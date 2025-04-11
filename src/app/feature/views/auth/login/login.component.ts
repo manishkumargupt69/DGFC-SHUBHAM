@@ -21,7 +21,6 @@ export class LoginComponent {
   @ViewChild('loginForm') loginForm?: any;
   constructor(private authService: AuthService, private toastr: ToastrService, private router: Router,
     private authenticationservice: AuthenticationService, private appStateService: AppStateService) {
-    authService.processing(true);
   }
 
   onSubmit() {
@@ -39,7 +38,7 @@ export class LoginComponent {
         this.router.navigateByUrl('app/dashboard');
       }
       else {
-        // this.toastr.error(res.message);
+        this.toastr.error(res.message);
       }
       sub.unsubscribe();
     })
